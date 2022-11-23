@@ -41,6 +41,7 @@ const SortableTable = ({ data, headers }) => {
             <th
               key={JSON.stringify(header) + idx}
               onClick={() => onClickHandler(idx)}
+              data-testid={`header-${idx}`}
             >
               {header.header}
             </th>
@@ -50,8 +51,13 @@ const SortableTable = ({ data, headers }) => {
       <tbody>
         {sortedData.map((row, idx) => (
           <tr key={JSON.stringify(row) + idx}>
-            {headers.map((header, idx) => (
-              <td key={JSON.stringify(header) + idx}>{row[idx]}</td>
+            {headers.map((header, colIdx) => (
+              <td
+                key={JSON.stringify(header) + colIdx}
+                data-testid={`cell-${idx}-${colIdx}`}
+              >
+                {row[colIdx]}
+              </td>
             ))}
           </tr>
         ))}

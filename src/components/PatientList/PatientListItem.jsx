@@ -1,5 +1,5 @@
 import { formatName } from "../../utils/string";
-import { PatientListItemWrapper } from "./PatientListItem.compoents";
+import { PatientListItemWrapper } from "./PatientListItem.components";
 
 const PatientListItem = ({ patient, onClick }) => {
   return (
