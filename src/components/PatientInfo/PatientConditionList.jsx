@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import useConditions from "../../hooks/useConditions";
 import SortableTable from "../SortableTable";
 
-const columns = [
+const PatientConditionColumns = [
   {
     header: "Condition",
     key: "resource.code.text",
@@ -24,7 +24,11 @@ const columns = [
 const PatientConditionList = ({ patientId }) => {
   const { conditions } = useConditions(patientId);
 
-  return <SortableTable data={conditions} headers={columns} />;
+  return (
+    <div data-testid="patient-condition-list">
+      <SortableTable data={conditions} headers={PatientConditionColumns} />
+    </div>
+  );
 };
 
 PatientConditionList.propTypes = {

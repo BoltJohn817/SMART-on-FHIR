@@ -7,7 +7,7 @@ import { formatName } from "../../utils/string";
 
 const PatientDetailedInfo = ({ patient }) => {
   return (
-    <PatientDetailedInfoWrapper>
+    <PatientDetailedInfoWrapper data-testid="patient-detailed-info">
       <InfoLabel data-testid="name">
         Name: <b>{patient ? formatName(patient.resource.name) : null}</b>
       </InfoLabel>

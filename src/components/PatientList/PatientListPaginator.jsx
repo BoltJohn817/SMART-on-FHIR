@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const PatientListPaginator = ({ onNext, onPrev }) => {
   return (
-    <PatientListPaginatorWrapper>
+    <PatientListPaginatorWrapper data-testid="list-paginator">
       <button
         onClick={onPrev}
         disabled={!onPrev}

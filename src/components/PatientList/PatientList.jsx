@@ -9,7 +9,7 @@ const PatientList = ({ onPatientChange }) => {
 
   return (
     <PatientListWrapper>
-      <PatientItemList>
+      <PatientItemList data-testid="patient-item-list">
         {patients.map((patient) => (
           <PatientListItem
             key={patient.resource.id}
