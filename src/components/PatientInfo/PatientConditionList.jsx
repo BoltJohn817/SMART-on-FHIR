@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import useConditions from "../../hooks/useConditions";
 import SortableTable from "../SortableTable";
 
@@ -24,6 +25,10 @@ const PatientConditionList = ({ patientId }) => {
   const { conditions } = useConditions(patientId);
 
   return <SortableTable data={conditions} headers={columns} />;
+};
+
+PatientConditionList.propTypes = {
+  patientId: PropTypes.string,
 };
 
 export default PatientConditionList;

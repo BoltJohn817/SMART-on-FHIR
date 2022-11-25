@@ -1,4 +1,5 @@
 import { PatientListPaginatorWrapper } from "./PatientListPaginator.components";
+import PropTypes from "prop-types";
 
 const PatientListPaginator = ({ onNext, onPrev }) => {
   return (
@@ -19,6 +20,11 @@ const PatientListPaginator = ({ onNext, onPrev }) => {
       </button>
     </PatientListPaginatorWrapper>
   );
+};
+
+PatientListPaginator.propTypes = {
+  onNext: PropTypes.func,
+  onPrev: PropTypes.func,
 };
 
 export default PatientListPaginator;

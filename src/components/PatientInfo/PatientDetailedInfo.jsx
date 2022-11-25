@@ -2,6 +2,7 @@ import {
   PatientDetailedInfoWrapper,
   InfoLabel,
 } from "./PatientDetailedInfo.components";
+import PropTypes from "prop-types";
 import { formatName } from "../../utils/string";
 
 const PatientDetailedInfo = ({ patient }) => {
@@ -18,6 +19,18 @@ const PatientDetailedInfo = ({ patient }) => {
       </InfoLabel>
     </PatientDetailedInfoWrapper>
   );
+};
+
+PatientDetailedInfo.propTypes = {
+  patient: PropTypes.object,
+  resource: PropTypes.exact({
+    name: {
+      family_name: PropTypes.arrayOf(PropTypes.string),
+      given_name: PropTypes.arrayOf(PropTypes.string),
+    },
+    gender: PropTypes.string,
+    birthDate: PropTypes.string,
+  }),
 };
 
 export default PatientDetailedInfo;

@@ -9,7 +9,7 @@ export const PatientListWrapper = styled.div`
   flex-direction: column;
 `;
 
-export const PatientList = styled.div`
+export const PatientItemList = styled.div`
   flex: 1;
 
   display: flex;

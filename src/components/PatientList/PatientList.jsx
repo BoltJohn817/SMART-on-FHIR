@@ -1,14 +1,15 @@
 import PatientListItem from "./PatientListItem";
 import PatientListPaginator from "./PatientListPaginator";
-import { PatientListWrapper, PatientList } from "./PatientList.components";
+import { PatientListWrapper, PatientItemList } from "./PatientList.components";
 import { usePatients } from "../../hooks";
+import PropTypes from "prop-types";
 
-export default ({ onPatientChange }) => {
+const PatientList = ({ onPatientChange }) => {
   const { patients, nextPage, prevPage } = usePatients();
 
   return (
     <PatientListWrapper>
-      <PatientList>
+      <PatientItemList>
         {patients.map((patient) => (
           <PatientListItem
             key={patient.resource.id}
@@ -16,8 +17,14 @@ export default ({ onPatientChange }) => {
             onClick={() => onPatientChange(patient)}
           />
         ))}
-      </PatientList>
+      </PatientItemList>
       <PatientListPaginator onNext={nextPage} onPrev={prevPage} />
     </PatientListWrapper>
   );
 };
+
+PatientList.propTypes = {
+  onPatientChange: PropTypes.func,
+};
+
+export default PatientList;

@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { TableWrapper } from "./SortableTable.components";
+import PropTypes from "prop-types";
 
 const compareData = (data1, data2) =>
   data1.toString().localeCompare(data2.toString());
@@ -64,6 +65,11 @@ const SortableTable = ({ data, headers }) => {
       </tbody>
     </TableWrapper>
   );
+};
+
+SortableTable.propTypes = {
+  data: PropTypes.array,
+  headers: PropTypes.array,
 };
 
 export default SortableTable;
